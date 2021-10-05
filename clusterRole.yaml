@@ -1,0 +1,9 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  # "namespace" omitted since ClusterRoles are not namespaced
+  name: k8swatcherlmlogs
+rules:
+- apiGroups: [""]
+  resources: ["pods/log","events","pods","containers","nodes","services","namespaces","componentstatuses"]
+  verbs: ["get", "watch", "list"]
